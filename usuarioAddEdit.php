@@ -66,128 +66,139 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                   
+
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Adicionar Usuário</h6>
                         </div>
                         <div class="card-body">
-                            <div class="table-responsive">
-                                <form action="controle/usuarioControl.php" method="post">
-                                    <input type="hidden" name="id_usuario" 
-                                           value="<?php echo $obj==NULL?"0":$obj->getIdUsuario(); ?>"/>
-                                    <div>
-                                        Nome: 
-                                        <input type="text" name="nome" class="form-control mb-2"
-                                        value="<?php echo $obj==NULL?"":$obj->getNome(); ?>" />
-                                    </div>
-                                    <div>
-                                        CPF: 
-                                        <input type="number" name="cpf" class="form-control mb-2"
-                                        value="<?php echo $obj==NULL?"":$obj->getCpf(); ?>" />
-                                    </div>
-                                    <div>
-                                        E-mail:
-                                        <input type="email" name="email" class="form-control mb-2"
-                                        value="<?php echo $obj==NULL?"":$obj->getEmail(); ?>" />
-                                    </div>
-                                    <div>
-                                        Tipo Usuário:
-                                        <input type="text" name="tipo_usuario" class="form-control mb-2"
-                                        value="<?php echo $obj==NULL?"":$obj->getTipoUsuario(); ?>" />
-                                    </div>
-                                    <div>
-                                        Senha: 
-                                        <input type="password" name="senha" class="form-control mb-2"
-                                        value="<?php echo $obj==NULL?"":$obj->getSenha(); ?>" />
-                                    </div>
-                                    <div>
-                                        DNE:
-                                        <input type="number" name="codigo_dne" class="form-control mb-2"
-                                        value="<?php echo $obj==NULL?"":$obj->getCodigoDne(); ?>" />
-                                    </div>
-                                    <div>
-                                        Permissão:
-                                        <input type="Select" name="permissao" class="form-control mb-2"
-                                        value="<?php echo $obj==NULL?"":$obj->getPermissao(); ?>" />
-                                    </div>
-                                    
-                                    <div>
-                                        <button type="submit"class="btn btn-success btn-icon-split">
-                                            <span class="icon text-white-50">
-                                                <i class="fas fa-save"></i>
-                                            </span>
-                                            <span class="text">
-                                                <?php echo $obj==NULL?"Salvar":"Atualizar"; ?>
-                                            </span>
-                                        </button>
-                                    </div>
-                                </form>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <form class="form-row col-10 mx-auto" action="controle/usuarioControl.php"
+                                        method="post">
+                                        <input type="hidden" name="id_usuario"
+                                            value="<?php echo $obj==NULL?"0":$obj->getIdUsuario(); ?>" />
+
+                                        <div class="col-12">
+                                            Nome:
+                                            <input type="text" name="nome" class="form-control mb-4"
+                                                value="<?php echo $obj==NULL?"":$obj->getNome(); ?>" />
+                                        </div>
+                                        <div class="col-4">
+                                            CPF:
+                                            <input type="number" name="cpf" class="form-control mb-4"
+                                                value="<?php echo $obj==NULL?"":$obj->getCpf(); ?>" />
+                                        </div>
+
+                                        <div class="col-5">
+                                            E-mail:
+                                            <input type="email" name="email" class="form-control mb-4"
+                                                value="<?php echo $obj==NULL?"":$obj->getEmail(); ?>" />
+                                        </div>
+                                        <div class="col-3">
+                                            Tipo Usuário:
+                                            <input type="text" name="tipo_usuario" class="form-control mb-4"
+                                                value="<?php echo $obj==NULL?"":$obj->getTipoUsuario(); ?>" />
+                                        </div>
+                                        <div class="col-4">
+                                            Senha:
+                                            <input type="password" name="senha" class="form-control mb-4"
+                                                value="<?php echo $obj==NULL?"":$obj->getSenha(); ?>" />
+                                        </div>
+                                        <div class="col-4">
+                                            DNE:
+                                            <input type="number" name="codigo_dne" class="form-control mb-4"
+                                                value="<?php echo $obj==NULL?"":$obj->getCodigoDne(); ?>" />
+                                        </div>
+
+                                        <div class="col-4">
+                                            Permissão:
+                                            <select value="<?php echo $obj==NULL?"":$obj->getPermissao(); ?>"
+                                                type="select" name="permissao" class="form-control mb-4">
+                                                <option value="-">-</option>
+                                                <option value="Sim">Sim</option>
+                                                <option value="Não">Não</option>
+                                            </select>
+                                        </div>
+                                        <div class="row justify-content-center mx-auto mt-4">
+                                            <div class="col-12 justify-content-center">
+                                                <button type="submit" class="btn btn-success btn-icon-split">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-save"></i>
+                                                    </span>
+                                                    <span class="text">
+                                                        <?php echo $obj==NULL?"Salvar":"Atualizar"; ?>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
+
+                        </div>
+                        <!-- /.container-fluid -->
+
+                    </div>
+                    <!-- End of Main Content -->
+
+                    <!-- Footer -->
+                    <?php 
+                include 'footer.php';
+                ?>
+                    <!-- End of Footer -->
+
+                </div>
+                <!-- End of Content Wrapper -->
+
+            </div>
+            <!-- End of Page Wrapper -->
+
+            <!-- Scroll to Top Button-->
+            <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+            </a>
+
+            <!-- Logout Modal-->
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <a class="btn btn-primary" href="login.html">Logout</a>
                         </div>
                     </div>
-
-                </div>
-                <!-- /.container-fluid -->
-
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <?php 
-                include 'footer.php';
-            ?>
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <!-- Bootstrap core JavaScript-->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+            <!-- Core plugin JavaScript-->
+            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+            <!-- Custom scripts for all pages-->
+            <script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+            <!-- Page level plugins -->
+            <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+            <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+            <!-- Page level custom scripts -->
+            <script src="js/demo/datatables-demo.js"></script>
 
 </body>
+
 
 </html>

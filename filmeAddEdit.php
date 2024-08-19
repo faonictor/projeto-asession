@@ -74,38 +74,40 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <form action="controle/filmeControl.php" method="post">
+                                <form class="form-row col-10 mx-auto" action="controle/filmeControl.php" method="post">
                                     <input type="hidden" name="id_filme" 
                                            value="<?php echo $obj==NULL?"0":$obj->getIdFilme(); ?>"/>
-                                    <div>
+                                    <div class="col-12">
                                         Título: 
                                         <input type="text" name="titulo" class="form-control mb-2"
                                         value="<?php echo $obj==NULL?"":$obj->getTitulo(); ?>" />
                                     </div>
-                                    <div>
+                                    <div class="col-2">
                                         Duração Filme:
                                         <input type="Number" name="duracao_filme" class="form-control mb-2"
                                         value="<?php echo $obj==NULL?"":$obj->getDuracaoFilme(); ?>" />
                                     </div>
-                                    <div>
+                                    <div class="col-8">
                                         Sinopse: 
                                         <input type="textarea" name="sinopse" class="form-control mb-2"
                                         value="<?php echo $obj==NULL?"":$obj->getSinopse(); ?>" />
                                     </div>
-                                    <div>
+                                    <div class="col-2">
                                         Classificação: 
                                         <input type="text" name="classificacao" class="form-control mb-2"
                                         value="<?php echo $obj==NULL?"":$obj->getClassificacao(); ?>" />
                                     </div>
-                                    <div>
-                                        <button type="submit"class="btn btn-success btn-icon-split">
-                                            <span class="icon text-white-50">
-                                                <i class="fas fa-save"></i>
-                                            </span>
-                                            <span class="text">
-                                                <?php echo $obj==NULL?"Salvar":"Atualizar"; ?>
-                                            </span>
-                                        </button>
+                                    <div class="row justify-content-center mx-auto mt-4">
+                                        <div class="col-12 justify-content-center">
+                                            <button type="submit"class="btn btn-success btn-icon-split">
+                                                <span class="icon text-white-50">
+                                                    <i class="fas fa-save"></i>
+                                                </span>
+                                                <span class="text">
+                                                    <?php echo $obj==NULL?"Salvar":"Atualizar"; ?>
+                                                </span>
+                                            </button>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
